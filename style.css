@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.news-title{
+  @apply px-2 text-zinc-50;
+}
+.news-menu{
+  @apply px-4 text-zinc-50 hover:text-stone-900 hover:bg-white hover:text-black  py-1.5;
+}
+.news-search{
+  @apply px-2 py-1.5 ml-20;
+}
+.news-input{
+  @apply px-3;
+}
+.news-button{
+  @apply bg-blue-800 text-sm px-1.5 py-0.5;
+}
