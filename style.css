@@ -17,3 +17,12 @@
 .news-button{
   @apply bg-blue-800 text-sm px-1.5 py-0.5;
 }
+.news-h2{
+  @apply text-3xl font-bold my-4;
+}
+.news-tt{
+  @apply grid grid-cols-3 gap-8;  
+}
+.news-contents{
+  @apply border border-gray-400;  
+}
