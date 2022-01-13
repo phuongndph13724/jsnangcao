@@ -1,6 +1,6 @@
 const NotFoundPage = {
     render() {
-        return `Not Found Page`;
+        return `Not Page`;
     },
 };
 export default NotFoundPage;

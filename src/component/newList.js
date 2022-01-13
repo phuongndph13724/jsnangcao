@@ -13,7 +13,7 @@ const NewsList = {
                   <img src="${post.img}" class="mx-auto" alt=""
                       width="274px" height="150px"> </a>
                   <strong class="py-1.5"> <a href="/news/${post.id}"> ${post.title}</a> </strong>
-                  <p>${post.desc}</p>
+                  <p class="italic">${post.desc}</p>
               </div>
           </div>
           `).join("")}

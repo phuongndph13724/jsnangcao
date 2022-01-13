@@ -13,6 +13,7 @@ const Header = {
             <li class="px-6  "><a href="/about" class=" text-sm  hover:border-b-2 text-white ">About</a></li>
             <li class="px-6  "><a href="/product" class=" text-sm  hover:border-b-2 text-white ">Product</a></li>
             <li class="px-6  "><a href="/contact" class=" text-sm  hover:border-b-2 text-white ">Contact</a></li>
+            <li class="px-6  "><a href="/admin" class=" text-sm  hover:border-b-2 text-white ">Admin</a></li>
           </ul>
           <div class="pl-25">
             <form action="" class="float-right p">
