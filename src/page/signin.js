@@ -1,6 +1,10 @@
+import Footer from "../component/footer";
+import Header from "../component/header";
+
 const SignIn = {
     render() {
         return /* html */ `
+        ${Header.render()}
         <div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
   <div class="max-w-md w-full space-y-8">
     <div>
@@ -51,6 +55,7 @@ const SignIn = {
     </form>
   </div>
 </div>
+${Footer.render()}
         `;
     },
 };

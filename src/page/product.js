@@ -1,9 +1,12 @@
+import Footer from "../component/footer";
+import Header from "../component/header";
 import data from "../data";
 
 const ProductPage = {
     render() {
         return /* html */`
- 
+        ${Header.render()}
+        
       <h2 class="text-3xl font-bold my-4">Tin tức học tập</h2>
       <div class="grid grid-cols-3 gap-8">
           ${data.map((post) => /* html */`
@@ -18,6 +21,7 @@ const ProductPage = {
           </div>
           `).join("")}
       </div>
+      ${Footer.render()}
   `;
     },
 };

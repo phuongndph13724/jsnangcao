@@ -5,21 +5,20 @@ import ContactPage from "./page/contact";
 import HomePage from "./page/home";
 import NotFoundPage from "./page/notFound";
 import ProductPage from "./page/product";
-import Header from "./component/header";
-import Footer from "./component/footer";
-import NewsList from "./component/admin/newsList";
+import NewsList from "./component/admin/news";
 import SignIn from "./page/signin";
 import SignUp from "./page/signup";
-import NewsAdd from "./component/admin/newsAdd";
-import NewsEditPage from "./component/admin/newsEdit";
-import Admin from "./admin";
+import NewsAdd from "./component/admin/news/newsAdd";
+import NewsEditPage from "./component/admin/news/newsEdit";
+import NavAdmin from "./component/navadmin";
+import DashBoardPage from "./page/admin/dashboard";
+import AdminProducts from "./component/admin/products";
+import AdminOrder from "./component/admin/order";
 
 const router = new Navigo("/", { linksSelector: "a" });
 
 const print = (content) => {
     document.querySelector("#app").innerHTML = content;
-    document.querySelector("#header").innerHTML = Header.render();
-    document.querySelector("#footer").innerHTML = Footer.render();
 };
 
 router.on({
@@ -32,8 +31,8 @@ router.on({
     "/product": () => {
         print(ProductPage.render());
     },
-    "/admin": () => {
-        print(Admin.render());
+    "/NavAdmin": () => {
+        print(NavAdmin.render());
     },
     "/contact": () => {
         print(ContactPage.render());
@@ -47,15 +46,18 @@ router.on({
     "/signup": () => {
         print(SignUp.render());
     },
-    "/admin/newslist": () => {
+    "/admin/news": () => {
         print(NewsList.render());
     },
-    "/admin/newsadd": () => {
+    "/admin/news/newsadd": () => {
         print(NewsAdd.render());
     },
     "/admin/news/:id/edit": (value) => {
         print(NewsEditPage.render(value.data.id));
     },
+    "/admin/dashboard": () => print(DashBoardPage.render()),
+    "/admin/order": () => print(AdminOrder.render()),
+    "/admin/products": () => print(AdminProducts.render()),
 
 });
 router.notFound(() => print(NotFoundPage.render()));

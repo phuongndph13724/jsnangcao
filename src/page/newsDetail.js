@@ -1,3 +1,5 @@
+import Footer from "../component/footer";
+import Header from "../component/header";
 import data from "../data";
 
 const NewsDetailPage = {
@@ -5,6 +7,7 @@ const NewsDetailPage = {
         const result = data.find((post) => post.id === id);
 
         return /* html */`
+        ${Header.render()}
             <div class="grid grid-cols-2">
             <div>
                 <img src="${result.img}"/>
@@ -14,7 +17,7 @@ const NewsDetailPage = {
                 <p class="px-1 italic">${result.desc}</p> 
             </div>
             </div>
-            
+        ${Footer.render()}
         `;
     },
 };
