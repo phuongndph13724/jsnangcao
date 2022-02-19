@@ -6,6 +6,9 @@ import NewsList from "../component/newList";
 const HomePage = {
     async render() {
         return /* html */`
+        <div id="header">
+        
+        </div>
         ${Header.render()}
         <div class="banner">
              ${Banner.render()}
@@ -16,5 +19,8 @@ const HomePage = {
         ${Footer.render()}
         `;
     },
+    afterRender() {
+        Header.afterRender();
+    }
 };
 export default HomePage;

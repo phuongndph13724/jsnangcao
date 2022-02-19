@@ -1,9 +1,15 @@
+import {
+  getAll,remove
+} from "../../../api/posts";
 import data from "../../../data";
 import NavAdmin from "../../navadmin";
 
 const NewsList = {
-    render() {
-        return /* html */ `
+  async render() {
+    const {
+      data
+    } = await getAll();
+    return /* html */ `
         <div class="min-h-full">
             ${NavAdmin.render()}
             <header class="bg-white shadow">
@@ -50,22 +56,23 @@ const NewsList = {
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
                           
-                          ${data.map((prdlist) => /* html */`
+                          ${data.map((post,index) => /* html */`
                           <tr>
                           <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                              <a href="/admin/news/${prdlist.id}/edit" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                              <a href="/admin/news/${post.id}/edit" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                              <button data-id="${post.id}" class="btn btn-remove text-red-600 hover:text-indigo-900">Delete</button>
                             </td>
                           <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                              ${prdlist.id}
+                              ${index+1}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
                               <div class="flex items-center">
                                 <div class="flex-shrink-0 h-10 w-10">
-                                  <img class="h-10 w-10 rounded-full" src="${prdlist.img}" alt="">
+                                  <img class="h-10 w-10 rounded-full" src="${post.img}" alt="">
                                 </div>
                                 <div class="ml-4">
                                   <div class="text-sm font-medium text-gray-900">
-                                    ${prdlist.title}
+                                    ${post.title}
                                   </div>
                                   <div class="text-sm text-gray-500">
                                   </div>
@@ -74,7 +81,7 @@ const NewsList = {
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
                               <div class="text-sm text-gray-900 py-30">
-                                  <p>${prdlist.desc}</p>
+                                  <p>${post.desc}</p>
                               </div>
                             </td>
                             
@@ -90,9 +97,25 @@ const NewsList = {
             </div>
             </main>
         </div>
-
-        
         `;
-    },
-};
+  },
+  afterRender() {
+    // lấy danh sách button sau khi render
+    const buttons = document.querySelectorAll('.btn');
+    // tạo vòng lặp cho nodelist button
+    buttons.forEach(btn => {
+      // lấy ID từ thuộc tính data-id của button
+      const id = btn.dataset.id;
+      btn.addEventListener('click', () => {
+        const confirm = window.confirm("Xóa bài viết này?");
+        if (confirm) {
+          // gọi hàm delete trong folder API và bắn id vào hàm
+          remove(id).then(() => {
+            console.log('Đã xóa thành công');
+          })
+        }
+      })
+    });
+  }
+}
 export default NewsList;

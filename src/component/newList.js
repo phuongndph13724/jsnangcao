@@ -1,8 +1,10 @@
+import { getAll } from "../api/posts";
+
 const NewsList = {
-    render() {
-        const API = "http://localhost:3001/posts";
-        return fetch(API).then((response) => response.json()).then((data) =>/* html */ `
-            <h2 class="text-3xl font-bold my-4">Tin tức học tập</h2>
+    async render() {
+        const {data} = await getAll();
+        return /* html */ `
+        <h2 class="text-3xl font-bold my-4">Tin tức học tập</h2>
                 <div class="bg-white">
                     <div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
                             <div class="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
@@ -20,7 +22,7 @@ const NewsList = {
                             </div>
                     </div>
                 </div>
-        `);
+        `;
     },
 };
 export default NewsList;

@@ -1,30 +1,36 @@
+import {
+  signup
+} from "../api/user";
 import Footer from "../component/footer";
 import Header from "../component/header";
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
+
 
 const SignUp = {
-    render() {
-        return /* html */ `
+  render() {
+    return /* html */ `
         ${Header.render()}
-        <form>
+        <form id="formSignup">
         <div class="shadow overflow-hidden sm:rounded-md">
           <div class="px-4 py-5 bg-white sm:p-6">
             <div class="grid grid-cols-6 gap-6">
               <div class="sm:col-span-3">
                 <label for="last-name" class="block text-sm font-medium text-gray-700">Họ và tên</label>
-                <input type="text" name="last-name" id="name" autocomplete="family-name" class="bg-gray-100 px-2 py-2 mt-1 focus:ring-slate-900 focus:border-slate-900 block w-full shadow-sm sm:text-sm border-slate-900 rounded-md">
+                <input type="text" name="last-name" id="name" autocomplete="family-name" class="border border-black bg-gray-100 px-2 py-2 mt-1 focus:ring-slate-900 focus:border-slate-900 block w-full shadow-sm sm:text-sm border-slate-900 rounded-md">
               </div>
 
               <div class="col-span-6 sm:col-span-4">
-                <label for="email-address" class="block text-sm font-medium text-gray-700">Email address</label>
-                <input type="text" name="email-address" id="email-address" autocomplete="email" class="bg-gray-100 px-2 py-2 mt-1 focus:ring-slate-900 focus:border-slate-900 block w-full shadow-sm sm:text-sm border-slate-900 rounded-md">
+                <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
+                <input type="text" name="email" id="email" autocomplete="email" class="border border-black bg-gray-100 px-2 py-2 mt-1 focus:ring-slate-900 focus:border-slate-900 block w-full shadow-sm sm:text-sm border-slate-900 rounded-md">
               </div>
               <div class="sm:col-span-3">
                 <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                <input type="password" name="password" id="password" autocomplete="family-name" class="bg-gray-100 px-2 py-2 mt-1 focus:ring-slate-900 focus:border-slate-900 block w-full shadow-sm sm:text-sm border-slate-900 rounded-md">
+                <input type="password" name="password" id="password" autocomplete="family-name" class="border border-black bg-gray-100 px-2 py-2 mt-1 focus:ring-slate-900 focus:border-slate-900 block w-full shadow-sm sm:text-sm border-slate-900 rounded-md">
               </div>
               <div class="sm:col-span-3">
-              <label for="phone-number" class="block text-sm font-medium text-gray-700">Phone</label>
-              <input type="text" name="phone-number" id="phone-number" autocomplete="family-name" class="bg-gray-100 px-2 py-2 mt-1 focus:ring-slate-900 focus:border-slate-900 block w-full shadow-sm sm:text-sm border-slate-900 rounded-md">
+              <label for="phone" class="block text-sm font-medium text-gray-700">Phone</label>
+              <input type="text" name="phone" id="phone" autocomplete="family-name" class="border border-black bg-gray-100 px-2 py-2 mt-1 focus:ring-slate-900 focus:border-slate-900 block w-full shadow-sm sm:text-sm border-slate-900 rounded-md">
             </div>
               <div class="col-span-6 sm:col-span-3">
                 <label for="country" class="block text-sm font-medium text-gray-700">Quốc Tịch</label>
@@ -39,10 +45,9 @@ const SignUp = {
                   <option>Nga</option>
                 </select>
               </div>
-
               <div class="col-span-6">
                 <label for="street-address" class="block text-sm font-medium text-gray-700">Địa chỉ</label>
-                <input type="text" name="street-address" id="street-address" autocomplete="street-address" class="bg-gray-50 px-2 py-2 mt-1 focus:ring-slate-900 focus:border-slate-900 block w-full shadow-sm sm:text-sm border-slate-900 rounded-md">
+                <input type="text" name="street-address" id="address" autocomplete="street-address" class="border border-black bg-gray-50 px-2 py-2 mt-1 focus:ring-slate-900 focus:border-slate-900 block w-full shadow-sm sm:text-sm border-slate-900 rounded-md">
               </div>
             </div>
           </div>
@@ -55,6 +60,32 @@ const SignUp = {
       </form>
       ${Footer.render()}
         `;
-    },
-};
+  },
+  afterRender() {
+    const formSignup = document.querySelector('#formSignup');
+    formSignup.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      try {
+        const {
+          data
+        } = await signup({
+          name: document.querySelector('#name').value,
+          email: document.querySelector('#email').value,
+          password: document.querySelector('#password').value,
+          phone: document.querySelector('#phone').value,
+          country: document.querySelector('#country').value,
+          address: document.querySelector('#address').value
+        })
+        if (data) {
+          toastr.success("Bạn đã đăng ký thành công, chuyển sang trang đăng nhập");
+          setTimeout(() => {
+            document.location.href = "/signin";
+          }, 2000)
+        }
+      } catch (error) {
+        toastr.error(error.response.data);
+      }
+    });
+  }
+}
 export default SignUp;

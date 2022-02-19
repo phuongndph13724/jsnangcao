@@ -21,7 +21,7 @@ const router = new Navigo("/", {
 
 const print = async (content, id) => {
     document.querySelector("#app").innerHTML = await content.render(id);
-    if(content.afterRender) await content.render();
+    if (content.afterRender) await content.afterRender(id);
 };
 
 router.on({
@@ -59,9 +59,9 @@ router.on({
     "/admin/news/newsadd": () => {
         print(NewsAdd);
     },
-    "/admin/news/:id/edit": (value) => {
-        print(NewsEditPage.render(value.data.id));
-    },
+    "/admin/news/:id/edit": ({
+        data
+    }) => print(NewsEditPage, data.id),
     "/admin/dashboard": () => print(DashBoardPage),
     "/admin/order": () => print(AdminOrder),
     "/admin/products": () => print(AdminProducts),
