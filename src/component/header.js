@@ -1,6 +1,8 @@
 import {
   reRender
 } from "../untils";
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
 
 const Header = {
   render() {
@@ -30,7 +32,7 @@ const Header = {
 
                     <a href="/about" class="font-medium text-gray-500 hover:text-gray-900">About</a>
 
-                    <a href="/product" class="font-medium text-gray-500 hover:text-gray-900">Product</a>
+                    <a href="/products" class="font-medium text-gray-500 hover:text-gray-900">Product</a>
 
                     <a href="/contact" class="font-medium text-gray-500 hover:text-gray-900">Contact</a>
                     ${localStorage.getItem('user') ? `

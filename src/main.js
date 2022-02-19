@@ -4,7 +4,7 @@ import AboutPage from "./page/about";
 import ContactPage from "./page/contact";
 import HomePage from "./page/home";
 import NotFoundPage from "./page/notFound";
-import ProductPage from "./page/product";
+import ProductPage from "./page/products";
 import NewsList from "./component/admin/news";
 import SignIn from "./page/signin";
 import SignUp from "./page/signup";
@@ -14,6 +14,7 @@ import NavAdmin from "./component/navadmin";
 import DashBoardPage from "./page/admin/dashboard.js";
 import AdminProducts from "./component/admin/products";
 import AdminOrder from "./component/admin/order";
+import ProductDetailPage from "./page/products";
 
 const router = new Navigo("/", {
     linksSelector: "a",
@@ -24,6 +25,18 @@ const print = async (content, id) => {
     if (content.afterRender) await content.afterRender(id);
 };
 
+router.on("/admin/*", () => {}, {
+    before: (done) => {
+        if (localStorage.getItem('user')) {
+            const userId = JSON.parse(localStorage.getItem('user')).id;
+            if (userId === 1) {
+                done();
+            } else {
+                document.location.href = "/"
+            }
+        }
+    }
+})
 router.on({
     "/": () => {
         print(HomePage);
@@ -31,7 +44,7 @@ router.on({
     "/about": () => {
         print(AboutPage);
     },
-    "/product": () => {
+    "/products": () => {
         print(ProductPage);
     },
     "/NavAdmin": () => {
@@ -45,8 +58,14 @@ router.on({
             id,
         },
     }) => {
-        print(NewsDetailPage, id);
+        print(NewsDetailPage, data.id);
     },
+    "/products/:id": ({
+        data: {
+            id,
+        },
+    }) => print(ProductDetailPage, data.id),
+
     "/signin": () => {
         print(SignIn);
     },

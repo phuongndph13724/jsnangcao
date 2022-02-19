@@ -4,104 +4,77 @@
       "id": "3",
       "title": "abc",
       "img": "http://res.cloudinary.com/dqhtmst8q/image/upload/v1645178275/cloud1-folder/ek8ujj9bfnbicyfdarp3.jpg",
-      "desc": "xyz"
+      "desc": "xyz",
+      "catePostId": "1"
     },
     {
       "title": "Ray Boyle",
       "img": "https://www.1sale.com/wp-content/uploads/2021/04/IMG_1619141771-679x390.png",
       "desc": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
-      "id": "4"
+      "id": "4",
+      "catePostId": "3"
     },
     {
       "title": "Jacqueline Hills",
       "img": "https://www.1sale.com/wp-content/uploads/2021/04/IMG_1619141771-679x390.png",
       "desc": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
-      "id": "5"
+      "id": "5",
+      "catePostId": "2"
     },
     {
       "title": "Lee Abbott",
       "img": "https://www.1sale.com/wp-content/uploads/2021/04/IMG_1619141771-679x390.png",
       "desc": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
-      "id": "6"
+      "id": "6",
+      "catePostId": "4"
     },
     {
       "title": "Muriel Okuneva",
       "img": "https://www.1sale.com/wp-content/uploads/2021/04/IMG_1619141771-679x390.png",
       "desc": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
-      "id": "7"
+      "id": "7",
+      "catePostId": "1"
     },
     {
       "title": "Tara Gutmann",
       "img": "https://www.1sale.com/wp-content/uploads/2021/04/IMG_1619141771-679x390.png",
       "desc": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-      "id": "8"
+      "id": "8",
+      "catePostId": "2"
     },
     {
       "title": "Rudy Trantow",
       "img": "https://www.1sale.com/wp-content/uploads/2021/04/IMG_1619141771-679x390.png",
       "desc": "The Football Is Good For Training And Recreational Purposes",
-      "id": "9"
+      "id": "9",
+      "catePostId": "2"
     },
     {
       "id": "10",
       "title": "",
       "img": "http://res.cloudinary.com/dqhtmst8q/image/upload/v1645178220/cloud1-folder/yduaynytbhgjsvu3cxzp.jpg",
-      "desc": ""
-    },
-    {
-      "title": "Esther Morar",
-      "img": "https://www.1sale.com/wp-content/uploads/2021/04/IMG_1619141771-679x390.png",
-      "desc": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-      "id": "11"
-    },
-    {
-      "title": "Sonya Prohaska Sr.",
-      "img": "https://www.1sale.com/wp-content/uploads/2021/04/IMG_1619141771-679x390.png",
-      "desc": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
-      "id": "12"
-    },
-    {
-      "title": "Levi Turcotte",
-      "img": "https://www.1sale.com/wp-content/uploads/2021/04/IMG_1619141771-679x390.png",
-      "desc": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-      "id": "13"
-    },
-    {
-      "title": "Heather Labadie",
-      "img": "https://th.bing.com/th/id/OIP.HMb8rzSZHksWDQuI45bveAHaKc?w=120&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7",
-      "desc": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-      "id": "15"
-    },
-    {
-      "title": "Nguyễn Đăc Phương",
-      "img": "http://res.cloudinary.com/dqhtmst8q/image/upload/v1645156886/cloud1-folder/zefvkyi98w5n3r4l6oup.jpg",
-      "desc": "đasadas",
-      "id": "37eTxIQ"
-    },
-    {
-      "title": "Nguyễn Đăc Phương",
-      "img": "http://res.cloudinary.com/dqhtmst8q/image/upload/v1645167545/cloud1-folder/q7qmbcvrfbhu5hkupyxh.jpg",
-      "desc": "32",
-      "id": "lqNVhYB"
-    },
-    {
-      "title": "123113131",
-      "img": "http://res.cloudinary.com/dqhtmst8q/image/upload/v1645172358/cloud1-folder/xcwld8axclhmgzanl3f4.jpg",
-      "desc": "dasdsadsdas",
-      "id": "QuYO3iE"
-    },
-    {
-      "title": "dsadasda",
-      "img": "http://res.cloudinary.com/dqhtmst8q/image/upload/v1645178104/cloud1-folder/mo8ciiysirwpya5xof9f.jpg",
-      "desc": "dsadsadasda",
-      "id": "X60sI__"
-    },
-    {
-      "title": "đá",
-      "img": "http://res.cloudinary.com/dqhtmst8q/image/upload/v1645178170/cloud1-folder/ssva3ibljxl11iahj5rm.jpg",
-      "desc": "dsadsadsadsadasda",
-      "id": "aqvbPKL"
+      "desc": "",
+      "catePostId": "3"
     }
+  ],
+  "catePosts": [
+      {"id": "1", "name":"Bài viết 1"},
+      {"id": "2", "name":"Bài viết 2"},
+      {"id": "3", "name":"Bài viết 3"},
+      {"id": "4", "name":"Bài viết 4"}
+  ],
+  "products":[
+     {
+       "title": "Jacqueline Hills",
+      "img": "https://www.1sale.com/wp-content/uploads/2021/04/IMG_1619141771-679x390.png",
+      "desc": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+      "id": "1"
+     },{
+       "title": "Nguyễn Đắc Phương",
+      "img": "https://www.1sale.com/wp-content/uploads/2021/04/IMG_1619141771-679x390.png",
+      "desc": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+      "id": "2"
+     }
   ],
   "users": [
     {
@@ -130,6 +103,15 @@
       "country": "Việt Nam",
       "address": "Bắc Ninh",
       "id": 3
+    },
+    {
+      "email": "a@gmail.com",
+      "password": "$2a$10$2OOnctf8asXsY27gGZc58.JMJ9xs1T7XuPmTpB1VwbG1FYWG2boHK",
+      "name": "Nguyễn Đắc Phương",
+      "phone": "0969645534",
+      "country": "Mexico",
+      "address": "Bắc Ninh",
+      "id": 4
     }
   ]
 }

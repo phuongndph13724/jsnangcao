@@ -1,6 +1,6 @@
 import Footer from "../component/footer";
 import Header from "../component/header";
-import data from "../data";
+
 
 const NewsDetailPage = {
     render(id) {
