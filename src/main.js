@@ -11,54 +11,61 @@ import SignUp from "./page/signup";
 import NewsAdd from "./component/admin/news/newsAdd";
 import NewsEditPage from "./component/admin/news/newsEdit";
 import NavAdmin from "./component/navadmin";
-import DashBoardPage from "./page/admin/dashboard";
+import DashBoardPage from "./page/admin/dashboard.js";
 import AdminProducts from "./component/admin/products";
 import AdminOrder from "./component/admin/order";
 
-const router = new Navigo("/", { linksSelector: "a" });
+const router = new Navigo("/", {
+    linksSelector: "a",
+});
 
-const print = (content) => {
-    document.querySelector("#app").innerHTML = content;
+const print = async (content, id) => {
+    document.querySelector("#app").innerHTML = await content.render(id);
+    if(content.afterRender) await content.render();
 };
 
 router.on({
     "/": () => {
-        print(HomePage.render());
+        print(HomePage);
     },
     "/about": () => {
-        print(AboutPage.render());
+        print(AboutPage);
     },
     "/product": () => {
-        print(ProductPage.render());
+        print(ProductPage);
     },
     "/NavAdmin": () => {
-        print(NavAdmin.render());
+        print(NavAdmin);
     },
     "/contact": () => {
-        print(ContactPage.render());
+        print(ContactPage);
     },
-    "/news/:id": (value) => {
-        print(NewsDetailPage.render(value.data.id));
+    "/news/:id": ({
+        data: {
+            id,
+        },
+    }) => {
+        print(NewsDetailPage, id);
     },
     "/signin": () => {
-        print(SignIn.render());
+        print(SignIn);
     },
     "/signup": () => {
-        print(SignUp.render());
+        print(SignUp);
     },
     "/admin/news": () => {
-        print(NewsList.render());
+        print(NewsList);
     },
     "/admin/news/newsadd": () => {
-        print(NewsAdd.render());
+        print(NewsAdd);
     },
     "/admin/news/:id/edit": (value) => {
         print(NewsEditPage.render(value.data.id));
     },
-    "/admin/dashboard": () => print(DashBoardPage.render()),
-    "/admin/order": () => print(AdminOrder.render()),
-    "/admin/products": () => print(AdminProducts.render()),
+    "/admin/dashboard": () => print(DashBoardPage),
+    "/admin/order": () => print(AdminOrder),
+    "/admin/products": () => print(AdminProducts),
 
 });
-router.notFound(() => print(NotFoundPage.render()));
+router.notFound(() => print(NotFoundPage));
 router.resolve();

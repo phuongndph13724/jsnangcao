@@ -4,14 +4,14 @@ import Header from "../component/header";
 import NewsList from "../component/newList";
 
 const HomePage = {
-    render() {
+    async render() {
         return /* html */`
         ${Header.render()}
         <div class="banner">
              ${Banner.render()}
         </div>
         <div class="news">
-             ${NewsList.render()}
+             ${await NewsList.render()}
         </div>
         ${Footer.render()}
         `;

@@ -41,12 +41,11 @@ const NewsList = {
                               STT
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                              Tên
+                              Ảnh / Tên
                             </th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                               Desc
                             </th>
-                            
                           </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
@@ -81,10 +80,6 @@ const NewsList = {
                             
                           </tr>
                           `).join("")}
-                          
-                          
-              
-                          <!-- More people... -->
                         </tbody>
                       </table>
                     </div>
