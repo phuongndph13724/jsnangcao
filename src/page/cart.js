@@ -1,5 +1,5 @@
 import Footer from "../component/footer";
-import Header from "../component/footer";
+import Header from "../component/header";
 import {
     reRender
 } from "../untils";
@@ -51,9 +51,7 @@ const CartPage = {
                 <div class="flex items-center">
                   <div class="flex-shrink-0 h-20 w-36">
                     <img class="h-20 w-36" src="${item.img}" alt="">
-                    
                   </div>
-                 
                 </div>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
@@ -72,9 +70,13 @@ const CartPage = {
               </td>
             </tr>
             `).join('')}
-            <!-- More people... -->
           </tbody>
         </table>
+        <hr>
+        <div class="ml-44 mb-6">
+        <button id="" type="submit"
+                      class="mt-6 w-5/6 bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Thanh Toán</button>
+                      </div>
       </div>
     </div>
   </div>
@@ -84,6 +86,7 @@ const CartPage = {
         `
     },
     afterRender() {
+      Header.afterRender();
         const btns = document.querySelectorAll('.btn');
         btns.forEach(button => {
             button.addEventListener('click', function () {

@@ -35,6 +35,8 @@ const Header = {
                     <a href="/products" class="font-medium text-gray-500 hover:text-gray-900">Product</a>
 
                     <a href="/contact" class="font-medium text-gray-500 hover:text-gray-900">Contact</a>
+
+                    <a href="/cart" class="font-medium text-gray-500 hover:text-gray-900">Cart</a>
                     ${localStorage.getItem('user') ? `
                       <div class="flex list-none">
                         <li>Xin chào<a href="" id="email1" class="pl-3 font-medium text-indigo-600 hover:text-indigo-500"></a></li>

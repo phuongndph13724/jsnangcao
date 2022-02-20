@@ -9,5 +9,8 @@ const ContactPage = {
         ${Footer.render()}
         `;
     },
+    afterRender() {
+        Header.afterRender();
+    }
 };
 export default ContactPage;

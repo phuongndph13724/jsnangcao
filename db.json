@@ -1,32 +1,11 @@
 {
   "posts": [
     {
-      "id": "3",
-      "title": "abc",
-      "img": "http://res.cloudinary.com/dqhtmst8q/image/upload/v1645178275/cloud1-folder/ek8ujj9bfnbicyfdarp3.jpg",
-      "desc": "xyz",
-      "catePostId": "1"
-    },
-    {
       "title": "Ray Boyle",
       "img": "https://www.1sale.com/wp-content/uploads/2021/04/IMG_1619141771-679x390.png",
       "desc": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
       "id": "4",
       "catePostId": "3"
-    },
-    {
-      "title": "Jacqueline Hills",
-      "img": "https://www.1sale.com/wp-content/uploads/2021/04/IMG_1619141771-679x390.png",
-      "desc": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
-      "id": "5",
-      "catePostId": "2"
-    },
-    {
-      "title": "Lee Abbott",
-      "img": "https://www.1sale.com/wp-content/uploads/2021/04/IMG_1619141771-679x390.png",
-      "desc": "New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016",
-      "id": "6",
-      "catePostId": "4"
     },
     {
       "title": "Muriel Okuneva",
@@ -48,37 +27,43 @@
       "desc": "The Football Is Good For Training And Recreational Purposes",
       "id": "9",
       "catePostId": "2"
-    },
-    {
-      "id": "10",
-      "title": "",
-      "img": "http://res.cloudinary.com/dqhtmst8q/image/upload/v1645178220/cloud1-folder/yduaynytbhgjsvu3cxzp.jpg",
-      "desc": "",
-      "catePostId": "3"
     }
   ],
   "catePosts": [
-      {"id": "1", "name":"Bài viết 1"},
-      {"id": "2", "name":"Bài viết 2"},
-      {"id": "3", "name":"Bài viết 3"},
-      {"id": "4", "name":"Bài viết 4"}
+    {
+      "id": "1",
+      "name": "Bài viết 1"
+    },
+    {
+      "id": "2",
+      "name": "Bài viết 2"
+    },
+    {
+      "id": "3",
+      "name": "Bài viết 3"
+    },
+    {
+      "id": "4",
+      "name": "Bài viết 4"
+    }
   ],
-  "products":[
-     {
-       "title": "Jacqueline Hills",
+  "products": [
+    {
+      "title": "Jacqueline Hills",
       "img": "https://www.1sale.com/wp-content/uploads/2021/04/IMG_1619141771-679x390.png",
       "price": "10000000000",
       "desc": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
-      "cateProductId":"3",
+      "cateProductId": "3",
       "id": "1"
-     },{
-       "title": "Nguyễn Đắc Phương",
+    },
+    {
+      "title": "Nguyễn Đắc Phương",
       "img": "https://www.1sale.com/wp-content/uploads/2021/04/IMG_1619141771-679x390.png",
       "price": "1000",
       "desc": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
-      "cateProductId":"3",
+      "cateProductId": "3",
       "id": "2"
-     }
+    }
   ],
   "users": [
     {

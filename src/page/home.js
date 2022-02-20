@@ -2,10 +2,12 @@ import Banner from "../component/banner";
 import Footer from "../component/footer";
 import Header from "../component/header";
 import NewsList from "../component/newList";
+import ProductList from "../component/productList";
+import ProductPage from "./products";
 
 const HomePage = {
     async render() {
-        return /* html */`
+        return /* html */ `
         <div id="header">
         </div>
         ${Header.render()}
@@ -14,6 +16,9 @@ const HomePage = {
         </div>
         <div class="news">
              ${await NewsList.render()}
+        </div>
+        <div class="pruduct">
+             ${await ProductList.render()}
         </div>
         ${Footer.render()}
         `;

@@ -51,7 +51,7 @@ router.on({
     "/products": () => {
         print(ProductPage);
     },
-    "/NavAdmin": () => {
+    "/admin": () => {
         print(NavAdmin);
     },
     "/contact": () => {

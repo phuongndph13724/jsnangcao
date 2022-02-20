@@ -133,7 +133,7 @@ const DetailProduct = {
                       </fieldset>
                       <fieldset class=" relative mt-4">
                         <h4 class="text-sm text-gray-900 font-medium">Số lượng</h4><br>
-                        <input id="inputValue" type="number" class="p-1 border-black-500 border bg-gray-200"
+                        <input id="inputValue" value="1" type="number" class="p-1 border-black-500 border bg-gray-200"
                           aria-labelledby=" font-red-100 size-red-600-label">
                       </fieldset>
                       <fieldset class=" relative mt-4">
