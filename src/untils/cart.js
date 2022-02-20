@@ -14,12 +14,12 @@ export const addTocart = (newProduct, next) => {
     localStorage.setItem('cart', JSON.stringify(cart))
     next();
 }
-export const increaseQuantity = (id, next) => {
+export const increaseQuantitys = (id, next) => {
     cart.find(item => item.id === id).quantity++
     localStorage.setItem('cart', JSON.stringify(cart));
     next();
 }
-export const decreaseQuantity = (id, next) => {
+export const decreaseQuantitys = (id, next) => {
     const currentProduct = cart.find(item => item.id === id);
     currentProduct.quantity--;
     if (currentProduct.quantity < 1) {
@@ -31,7 +31,7 @@ export const decreaseQuantity = (id, next) => {
     localStorage.setItem('cart', JSON.stringify(cart));
     next();
 }
-export const removeItemInCart = (id, next) => {
+export const removeItemInCarts = (id, next) => {
     const confirm = window.confirm("Bạn có chắc chắn muốn xóa không?");
     if (confirm) {
         cart = cart.filter(item => item.id !== id);
