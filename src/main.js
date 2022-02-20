@@ -14,7 +14,11 @@ import NavAdmin from "./component/navadmin";
 import DashBoardPage from "./page/admin/dashboard.js";
 import AdminProducts from "./component/admin/products";
 import AdminOrder from "./component/admin/order";
-import ProductDetailPage from "./page/products";
+import {
+    data
+} from "jquery";
+import DetailProduct from "./page/products/productDetail";
+import CartPage from "./page/cart";
 
 const router = new Navigo("/", {
     linksSelector: "a",
@@ -54,17 +58,15 @@ router.on({
         print(ContactPage);
     },
     "/news/:id": ({
-        data: {
-            id,
-        },
+        data
     }) => {
+        console.log(data);
         print(NewsDetailPage, data.id);
     },
     "/products/:id": ({
-        data: {
-            id,
-        },
-    }) => print(ProductDetailPage, data.id),
+            data
+        }) =>
+        print(DetailProduct, data.id),
 
     "/signin": () => {
         print(SignIn);
@@ -84,6 +86,7 @@ router.on({
     "/admin/dashboard": () => print(DashBoardPage),
     "/admin/order": () => print(AdminOrder),
     "/admin/products": () => print(AdminProducts),
+    "/cart": () => print(CartPage)
 
 });
 router.notFound(() => print(NotFoundPage));

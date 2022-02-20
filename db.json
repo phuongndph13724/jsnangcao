@@ -67,12 +67,16 @@
      {
        "title": "Jacqueline Hills",
       "img": "https://www.1sale.com/wp-content/uploads/2021/04/IMG_1619141771-679x390.png",
+      "price": "10000000000",
       "desc": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+      "cateProductId":"3",
       "id": "1"
      },{
        "title": "Nguyễn Đắc Phương",
       "img": "https://www.1sale.com/wp-content/uploads/2021/04/IMG_1619141771-679x390.png",
+      "price": "1000",
       "desc": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+      "cateProductId":"3",
       "id": "2"
      }
   ],

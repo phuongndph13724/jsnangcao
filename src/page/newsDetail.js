@@ -1,20 +1,23 @@
+import {
+    get
+} from "../api/posts";
 import Footer from "../component/footer";
 import Header from "../component/header";
 
-
 const NewsDetailPage = {
-    render(id) {
-        const result = data.find((post) => post.id === id);
-
-        return /* html */`
+    async render(id) {
+        const {
+            data
+        } = await get(id);
+        return /* html */ `
         ${Header.render()}
             <div class="grid grid-cols-2">
             <div>
-                <img src="${result.img}"/>
+                <img src="${data.img}"/>
             </div>
             <div class="px-3 py-3">
-               <h1 class="text-4xl text-ellipsis">${result.title}</h1><br>
-                <p class="px-1 italic">${result.desc}</p> 
+               <h1 class="text-4xl text-ellipsis">${data.title}</h1><br>
+                <p class="px-1 italic">${data.desc}</p> 
             </div>
             </div>
         ${Footer.render()}
