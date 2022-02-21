@@ -21,6 +21,7 @@ import DetailProduct from "./page/products/productDetail";
 import CartPage from "./page/cart";
 import ProductsAdd from "./component/admin/products/productsAdd";
 import EditPdroductsPage from "./component/admin/products/editProducts";
+import Banner from "./component/banner";
 
 const router = new Navigo("/", {
     linksSelector: "a",
@@ -58,6 +59,12 @@ router.on({
     },
     "/contact": () => {
         print(ContactPage);
+    },
+    "/contact": () => {
+        print(ContactPage);
+    },
+    "/banner": () => {
+        print(Banner);
     },
     "/news/:id": ({
         data

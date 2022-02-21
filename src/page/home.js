@@ -9,14 +9,14 @@ const HomePage = {
     async render() {
         return /* html */ `
         <div id="header">
-        </div>
-        ${Header.render()}
+            ${Header.render()}
+        </div><br>
         <div class="banner">
              ${Banner.render()}
-        </div>
+        </div><br>
         <div class="news">
              ${await NewsList.render()}
-        </div>
+        </div><br>
         <div class="pruduct">
              ${await ProductList.render()}
         </div>
@@ -25,6 +25,7 @@ const HomePage = {
     },
     afterRender() {
         Header.afterRender();
+        Banner.afterRender();
     }
 };
 export default HomePage;
