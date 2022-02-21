@@ -19,7 +19,7 @@ const NewsList = {
                 </h1>
                 <div class="ml-80">
                     <span class="sm:ml-3">
-                      <a href="/admin/news/productadd">
+                      <a href="/admin/news/newsadd">
                         <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                               <!-- Heroicon name: solid/check -->
                               Thêm Mới
@@ -80,7 +80,7 @@ const NewsList = {
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
                               <div class="text-sm text-gray-900 py-30">
-                                  <p>${post.desc}</p>
+                                  <textarea id="desc-post" name="desc-post" rows="3" class="py-2 px-2 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-5/6 sm:text-sm border border-gray-300 rounded-md">${post.desc}</textarea>
                               </div>
                             </td>
                             

@@ -5,7 +5,7 @@ import {
 import axios from "axios";
 
 
-const ProductsAdd = {
+const EditPdroductsPage = {
     render() {
         return /* html */ `
          ${NavAdmin.render()}
@@ -114,4 +114,4 @@ const ProductsAdd = {
         });
     }
 };
-export default ProductsAdd;
+export default EditPdroductsPage;

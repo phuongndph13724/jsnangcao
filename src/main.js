@@ -20,6 +20,7 @@ import {
 import DetailProduct from "./page/products/productDetail";
 import CartPage from "./page/cart";
 import ProductsAdd from "./component/admin/products/productsAdd";
+import EditPdroductsPage from "./component/admin/products/editProducts";
 
 const router = new Navigo("/", {
     linksSelector: "a",
@@ -88,6 +89,9 @@ router.on({
     "/admin/order": () => print(AdminOrder),
     "/admin/products": () => print(AdminProducts),
     "/admin/products/productadd": () => print(ProductsAdd),
+    "/admin/products/:id/edit": ({
+        data
+    }) => print(EditPdroductsPage, data.id),
     "/cart": () => print(CartPage)
 
 });

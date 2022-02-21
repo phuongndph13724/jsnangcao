@@ -19,7 +19,7 @@ const AdminProducts = {
                 </h1>
                 <div class="ml-80">
                     <span class="sm:ml-3">
-                      <a href="/admin/product/newsadd">
+                      <a href="/admin/products/productadd">
                         <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                             <!-- Heroicon name: solid/check -->
                             Thêm Mới
@@ -39,7 +39,7 @@ const AdminProducts = {
               <th scope="col" class="px-6 py-3 text-left text-xl font-medium text-gray-500 uppercase tracking-wider">Title</th>
               <th scope="col" class="px-6 py-3 text-left text-xl font-medium text-gray-500 uppercase tracking-wider">Image</th>
               <th scope="col" class="px-6 py-3 text-left text-xl font-medium text-gray-500 uppercase tracking-wider">Price</th>
-              <th scope="col" class="px-6 py-3 text-left text-xl font-medium text-gray-500 uppercase tracking-wider">Role</th>
+              <th scope="col" class="px-6 py-3 text-left text-xl font-medium text-gray-500 uppercase tracking-wider">Desc</th>
               <th scope="col" class="relative px-6 py-3">
                 <span class="sr-only">Edit</span>
               </th>
@@ -67,9 +67,9 @@ const AdminProducts = {
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="text-sm text-gray-900">${item.price} $</div>
-              
               </td>
               <td class="px-6 py-4 whitespace-nowrap"> 
+                <textarea id="desc-post" name="desc-post" rows="3" class="py-2 px-2 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md">${item.desc}</textarea>
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                 <a href="#" class="text-indigo-600 hover:text-indigo-900"><button data-id="${item.id}" class="text-green-500 btn btn-remove">Sửa</button></a>
