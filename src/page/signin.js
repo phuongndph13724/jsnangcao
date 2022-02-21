@@ -67,7 +67,6 @@ ${Footer.render()}
         `;
   },
   afterRender() {
-    Header.afterRender();
     const formSignin = document.querySelector('#formSignin');
     formSignin.addEventListener('submit', async function (e) {
       e.preventDefault();

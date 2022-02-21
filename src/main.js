@@ -19,6 +19,7 @@ import {
 } from "jquery";
 import DetailProduct from "./page/products/productDetail";
 import CartPage from "./page/cart";
+import ProductsAdd from "./component/admin/products/productsAdd";
 
 const router = new Navigo("/", {
     linksSelector: "a",
@@ -86,6 +87,7 @@ router.on({
     "/admin/dashboard": () => print(DashBoardPage),
     "/admin/order": () => print(AdminOrder),
     "/admin/products": () => print(AdminProducts),
+    "/admin/products/productadd": () => print(ProductsAdd),
     "/cart": () => print(CartPage)
 
 });

@@ -1,21 +1,21 @@
 import Footer from "../component/footer";
 import Header from "../component/header";
 import {
-    reRender
+  reRender
 } from "../untils";
 import {
-    decreaseQuantitys,
-    increaseQuantitys,
-    removeItemInCarts
+  decreaseQuantitys,
+  increaseQuantitys,
+  removeItemInCarts
 } from "../untils/cart";
 
 const CartPage = {
-    render() {
-        let cart = [];
-        if (localStorage.getItem('cart')) {
-            cart = JSON.parse(localStorage.getItem('cart'));
-        }
-        return /*html*/ `
+  render() {
+    let cart = [];
+    if (localStorage.getItem('cart')) {
+      cart = JSON.parse(localStorage.getItem('cart'));
+    }
+    return /*html*/ `
         ${Header.render()}
         <div class="flex flex-col">
   <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -25,6 +25,7 @@ const CartPage = {
         <table class="min-w-full divide-y divide-gray-200">
           <thead class="bg-gray-50">
             <tr>
+              <th scope="col" class="px-6 py-3 text-left text-xl font-medium text-gray-500 uppercase tracking-wider">STT</th>
               <th scope="col" class="px-6 py-3 text-left text-xl font-medium text-gray-500 uppercase tracking-wider">Title</th>
               <th scope="col" class="px-6 py-3 text-left text-xl font-medium text-gray-500 uppercase tracking-wider">Image</th>
               <th scope="col" class="px-6 py-3 text-left text-xl font-medium text-gray-500 uppercase tracking-wider">Price</th>
@@ -36,8 +37,9 @@ const CartPage = {
             </tr>
           </thead>
           <tbody class="bg-white divide-y divide-gray-200">
-          ${cart.map(item =>/*html*/ `
+          ${cart.map((item,index) =>/*html*/ `
             <tr>
+            <td class="px-6 py-4 whitespace-nowrap">${index+1}</td>
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="flex items-center">
                   
@@ -84,28 +86,28 @@ const CartPage = {
         ${Footer.render()}
             
         `
-    },
-    afterRender() {
-      Header.afterRender();
-        const btns = document.querySelectorAll('.btn');
-        btns.forEach(button => {
-            button.addEventListener('click', function () {
-                const id = button.dataset.id;
-                if (button.classList.contains('btn-increase')) {
-                    increaseQuantitys(id, () => {
-                        reRender(CartPage, "#app");
-                    });
-                } else if (button.classList.contains('btn-decrease')) {
-                    decreaseQuantitys(id, () => {
-                        reRender(CartPage, "#app");
-                    });
-                } else {
-                    removeItemInCarts(id, () => {
-                        reRender(CartPage, "#app");
-                    })
-                }
-            })
-        })
-    }
+  },
+  afterRender() {
+    Header.afterRender();
+    const btns = document.querySelectorAll('.btn');
+    btns.forEach(button => {
+      button.addEventListener('click', function () {
+        const id = button.dataset.id;
+        if (button.classList.contains('btn-increase')) {
+          increaseQuantitys(id, () => {
+            reRender(CartPage, "#app");
+          });
+        } else if (button.classList.contains('btn-decrease')) {
+          decreaseQuantitys(id, () => {
+            reRender(CartPage, "#app");
+          });
+        } else {
+          removeItemInCarts(id, () => {
+            reRender(CartPage, "#app");
+          })
+        }
+      })
+    })
+  }
 }
 export default CartPage;
