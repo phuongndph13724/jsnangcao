@@ -24,6 +24,7 @@ const ProductPage = {
                                     </div>
                                     <p class="mt-1 text-lg font-medium text-gray-900">${products.title}</p>
                                     <h3 class="mt-4 text-sm text-gray-700">${products.desc}</h3>
+                                    <h3 class="mt-4 text-sm text-gray-700">${products.price} $</h3>
                                 </a>
                             `).join("")}
                             </div>

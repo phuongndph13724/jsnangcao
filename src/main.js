@@ -22,6 +22,7 @@ import CartPage from "./page/cart";
 import ProductsAdd from "./component/admin/products/productsAdd";
 import EditPdroductsPage from "./component/admin/products/editProducts";
 import Banner from "./component/banner";
+import AdminUsersPage from "./component/admin/users";
 
 const router = new Navigo("/", {
     linksSelector: "a",
@@ -82,6 +83,9 @@ router.on({
     },
     "/signup": () => {
         print(SignUp);
+    },
+    "/admin/users": () => {
+        print(AdminUsersPage);
     },
     "/admin/news": () => {
         print(NewsList);

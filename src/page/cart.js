@@ -11,6 +11,10 @@ import {
 
 const CartPage = {
   render() {
+    let tong = 0;
+    let thanhTien = 0;
+    
+
     let cart = [];
     if (localStorage.getItem('cart')) {
       cart = JSON.parse(localStorage.getItem('cart'));
@@ -31,13 +35,15 @@ const CartPage = {
               <th scope="col" class="px-6 py-3 text-left text-xl font-medium text-gray-500 uppercase tracking-wider">Price</th>
               <th scope="col" class="px-6 py-3 text-left text-xl font-medium text-gray-500 uppercase tracking-wider">Quantity</th>
               <th scope="col" class="px-6 py-3 text-left text-xl font-medium text-gray-500 uppercase tracking-wider">Role</th>
+              <th scope="col" class="px-6 py-3 text-left text-xl font-medium text-gray-500 uppercase tracking-wider">Tổng tiền</th>
               <th scope="col" class="relative px-6 py-3">
                 <span class="sr-only">Edit</span>
               </th>
             </tr>
           </thead>
-          <tbody class="bg-white divide-y divide-gray-200">
           ${cart.map((item,index) =>/*html*/ `
+          <tbody class="bg-white divide-y divide-gray-200">
+          
             <tr>
             <td class="px-6 py-4 whitespace-nowrap">${index+1}</td>
               <td class="px-6 py-4 whitespace-nowrap">
@@ -67,14 +73,23 @@ const CartPage = {
               <button data-id="${item.id}" class="text-3xl text-green-500 btn btn-increase">+</button>
              <button data-id="${item.id}" class="text-3xl text-red-500 btn btn-decrease">-</button>
               </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                                <p hidden>${tong = item.price * item.quantity}</p><p hidden>${thanhTien += item.price * item.quantity}</p>
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ">
+                                        ${tong}$</span>
+                                </td>
               <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                 <a href="#" class="text-indigo-600 hover:text-indigo-900"><button data-id="${item.id}" class="btn btn-remove">Xóa</button></a>
               </td>
             </tr>
-            `).join('')}
           </tbody>
+          `).join('')}
         </table>
         <hr>
+        <div class="pt-2 ml-24 grid grid-cols-2 text-4xl">
+          <h3 class="">Tổng tiền</h3>
+          <h3 class="text-red-500">${thanhTien}  $</h3>
+        </div>
         <div class="ml-44 mb-6">
         <button id="" type="submit"
                       class="mt-6 w-5/6 bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Thanh Toán</button>
