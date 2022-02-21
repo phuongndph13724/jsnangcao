@@ -1,15 +1,15 @@
 import NavAdmin from "../../navadmin";
 import {
-    getAll
-
+  getAll,
+  remove
 } from "../../../api/product";
 
 const AdminProducts = {
-    async render() {
-        const {
-            data
-        } = await getAll();
-        return /* html */ `
+  async render() {
+    const {
+      data
+    } = await getAll();
+    return /* html */ `
         <div class="min-h-full">
             ${NavAdmin.render()}
             <header class="bg-white shadow">
@@ -84,6 +84,25 @@ const AdminProducts = {
             </main>
         </div>
         `;
-    },
-};
+  },
+  afterRender() {
+    // lấy danh sách button sau khi render
+    const buttons = document.querySelectorAll('.btn');
+    // tạo vòng lặp cho nodelist button
+    buttons.forEach(btn => {
+      // lấy ID từ thuộc tính data-id của button
+      const id = btn.dataset.id;
+      btn.addEventListener('click', () => {
+        const confirm = window.confirm("Xóa bài viết này?");
+        if (confirm) {
+          // gọi hàm delete trong folder API và bắn id vào hàm
+          remove(id).then(() => {
+            console.log('Đã xóa thành công');
+            document.location.href = "/admin/products";
+          })
+        }
+      })
+    });
+  }
+}
 export default AdminProducts;

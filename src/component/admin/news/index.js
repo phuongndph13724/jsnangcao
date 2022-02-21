@@ -57,7 +57,7 @@ const NewsList = {
                           
                           ${data.map((post,index) => /* html */`
                           <tr>
-                          <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                          <td class="pr-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                               <a href="/admin/news/${post.id}/edit" class="text-indigo-600 hover:text-indigo-900">Edit</a>
                               <button data-id="${post.id}" class="btn btn-remove text-red-600 hover:text-indigo-900">Delete</button>
                             </td>
