@@ -3,7 +3,6 @@ import Footer from "../component/footer";
 import Header from "../component/header";
 import NewsList from "../component/newList";
 import ProductList from "../component/productList";
-import ProductPage from "./products";
 
 const HomePage = {
     async render() {
@@ -11,9 +10,7 @@ const HomePage = {
         <div id="header">
             ${Header.render()}
         </div><br>
-        <div class="banner">
-             ${Banner.render()}
-        </div><br>
+        <br>
         <div class="news">
              ${await NewsList.render()}
         </div><br>
