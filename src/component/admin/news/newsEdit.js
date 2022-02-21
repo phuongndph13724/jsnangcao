@@ -1,7 +1,6 @@
 import axios from "axios";
 import NavAdmin from "../../navadmin";
 import {
-  add,
   get,
   update
 } from "../../../api/posts";
@@ -77,13 +76,14 @@ const NewsEditPage = {
         <div>
         `;
   },
-  afterRender(id) {
+  afterRender() {
 
     const formEdit = document.querySelector("#form-edit-post");
     const imgPost = document.querySelector("#img-post");
     const imgPreview = document.querySelector('#imgPreview');
 
     let imgLink = "";
+
     const CLOUDINARY_API_URL = "https://api.cloudinary.com/v1_1/dqhtmst8q/image/upload";
     const CLOUDINARY_PRESET = "cloud1"
 
@@ -101,7 +101,6 @@ const NewsEditPage = {
         formData.append("file", file);
         formData.append("upload_preset", CLOUDINARY_PRESET);
 
-        // call api cloudinary
         const {
           data
         } = await axios.post(CLOUDINARY_API_URL, formData, {
